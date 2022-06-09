@@ -5,7 +5,7 @@ import org.springframework.stereotype.Repository;
 
 import com.example.demo.bean.CompanyRegistration;
 
-@Repository
+//@Repository
 public interface CompanyRepository extends MongoRepository<CompanyRegistration, String> { 
 
 }
