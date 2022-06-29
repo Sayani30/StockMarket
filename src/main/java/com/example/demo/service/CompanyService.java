@@ -23,8 +23,8 @@ public class CompanyService {
 
 	public List<CompanyRegistration> getAllCompanies(CompanyRegistration companyRegistrations) {
 		
-		CompanyRegistration companyRegistration = new CompanyRegistration();
-		companyRegistration.setMaxStockPrice(maxStockPrice());
+		//CompanyRegistration companyRegistration = new CompanyRegistration();
+		//companyRegistration.setMaxStockPrice(maxStockPrice());
 		//companyRegistration.setMinStockPrice(minStockPrice);
 		//companyRegistration.setAvgStockPrice(avgStockPrice);
 		return companyRepository.findAll();
