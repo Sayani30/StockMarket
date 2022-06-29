@@ -1,5 +1,6 @@
 package com.example.demo.bean;
 
+import java.util.Date;
 import java.util.List;
 
 import org.springframework.data.annotation.Id;
@@ -18,6 +19,7 @@ public class CompanyRegistration {
 	private StockDetails maxStockPrice;
 	private StockDetails minStockPrice;
 	private StockDetails avgStockPrice;
+	private Date startDate = new Date(System.currentTimeMillis());
 	private List<StockDetails> stockDetailsList;
 
 	
@@ -26,8 +28,8 @@ public class CompanyRegistration {
 	}
 
 	public CompanyRegistration(int companyCode, String comapanyName, String companyCEO, long companyTurnover,
-			String companyWebsite, String stockExchange, List<StockDetails> stockDetailsList,
-			StockDetails maxStockPrice, StockDetails minStockPrice, StockDetails avgStockPrice) {
+			String companyWebsite, String stockExchange, StockDetails maxStockPrice, StockDetails minStockPrice,
+			StockDetails avgStockPrice, Date startDate, List<StockDetails> stockDetailsList) {
 		super();
 		this.companyCode = companyCode;
 		this.comapanyName = comapanyName;
@@ -35,11 +37,14 @@ public class CompanyRegistration {
 		this.companyTurnover = companyTurnover;
 		this.companyWebsite = companyWebsite;
 		this.stockExchange = stockExchange;
-		this.stockDetailsList = stockDetailsList;
 		this.maxStockPrice = maxStockPrice;
 		this.minStockPrice = minStockPrice;
 		this.avgStockPrice = avgStockPrice;
+		this.startDate = startDate;
+		this.stockDetailsList = stockDetailsList;
 	}
+
+
 
 	public int getCompanyCode() {
 		return companyCode;
@@ -108,6 +113,14 @@ public class CompanyRegistration {
 
 	public void setAvgStockPrice(StockDetails avgStockPrice) {
 		this.avgStockPrice = avgStockPrice;
+	}
+
+	public Date getStartDate() {
+		return startDate;
+	}
+
+	public void setStartDate(Date startDate) {
+		this.startDate = startDate;
 	}
 
 	

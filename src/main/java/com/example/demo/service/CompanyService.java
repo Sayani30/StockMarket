@@ -21,7 +21,7 @@ public class CompanyService {
 		return companyRepository.save(companyRegistration);
 	}
 
-	public List<CompanyRegistration> getAllCompanies(CompanyRegistration companyRegistrations) {
+	public List<CompanyRegistration> getAllCompanies() {
 		
 		//CompanyRegistration companyRegistration = new CompanyRegistration();
 		//companyRegistration.setMaxStockPrice(maxStockPrice());
@@ -44,5 +44,6 @@ public class CompanyService {
 		companyRepository.deleteById(id);
 		return "Company deleted";
 	}
+
 
 }

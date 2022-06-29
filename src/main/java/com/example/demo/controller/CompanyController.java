@@ -33,7 +33,7 @@ public class CompanyController {
 	
 	@GetMapping(value = "/company/getall")
 	@ResponseStatus(HttpStatus.OK)
-	public List<CompanyRegistration> getCompanies(@RequestBody CompanyRegistration companyRegistration) {
+	public List<CompanyRegistration> getCompanies() {
 		return companyService.getAllCompanies();
 	}
 	
