@@ -6,6 +6,8 @@ import java.util.List;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import com.fasterxml.jackson.databind.annotation.JsonDeserialize;
+
 @Document
 public class CompanyRegistration {
 	
@@ -16,10 +18,12 @@ public class CompanyRegistration {
 	private long companyTurnover;
 	private String companyWebsite;
 	private String stockExchange;	
-	private StockDetails maxStockPrice;
-	private StockDetails minStockPrice;
-	private StockDetails avgStockPrice;
-	private Date startDate = new Date(System.currentTimeMillis());
+	private double maxStockPrice;
+	private double minStockPrice;
+	private double avgStockPrice;
+	@JsonDeserialize(using = DateHandler.class)
+	private Date startDate;
+	private Date endDate = new Date(System.currentTimeMillis());
 	private List<StockDetails> stockDetailsList;
 
 	
@@ -28,8 +32,8 @@ public class CompanyRegistration {
 	}
 
 	public CompanyRegistration(int companyCode, String comapanyName, String companyCEO, long companyTurnover,
-			String companyWebsite, String stockExchange, StockDetails maxStockPrice, StockDetails minStockPrice,
-			StockDetails avgStockPrice, Date startDate, List<StockDetails> stockDetailsList) {
+			String companyWebsite, String stockExchange, double maxStockPrice, double minStockPrice,
+			double avgStockPrice, Date startDate, Date endDate, List<StockDetails> stockDetailsList) {
 		super();
 		this.companyCode = companyCode;
 		this.comapanyName = comapanyName;
@@ -41,10 +45,9 @@ public class CompanyRegistration {
 		this.minStockPrice = minStockPrice;
 		this.avgStockPrice = avgStockPrice;
 		this.startDate = startDate;
+		this.endDate = endDate;
 		this.stockDetailsList = stockDetailsList;
 	}
-
-
 
 	public int getCompanyCode() {
 		return companyCode;
@@ -91,28 +94,36 @@ public class CompanyRegistration {
 		this.stockDetailsList = stockDetailsList;
 	}
 
-	public StockDetails getMaxStockPrice() {
+	public double getMaxStockPrice() {
 		return maxStockPrice;
 	}
 
-	public void setMaxStockPrice(StockDetails maxStockPrice) {
+	public void setMaxStockPrice(double maxStockPrice) {
 		this.maxStockPrice = maxStockPrice;
 	}
 
-	public StockDetails getMinStockPrice() {
+	public double getMinStockPrice() {
 		return minStockPrice;
 	}
 
-	public void setMinStockPrice(StockDetails minStockPrice) {
+	public void setMinStockPrice(double minStockPrice) {
 		this.minStockPrice = minStockPrice;
 	}
 
-	public StockDetails getAvgStockPrice() {
+	public double getAvgStockPrice() {
 		return avgStockPrice;
 	}
 
-	public void setAvgStockPrice(StockDetails avgStockPrice) {
+	public void setAvgStockPrice(double avgStockPrice) {
 		this.avgStockPrice = avgStockPrice;
+	}
+
+	public Date getEndDate() {
+		return endDate;
+	}
+
+	public void setEndDate(Date endDate) {
+		this.endDate = endDate;
 	}
 
 	public Date getStartDate() {
@@ -122,6 +133,5 @@ public class CompanyRegistration {
 	public void setStartDate(Date startDate) {
 		this.startDate = startDate;
 	}
-
 	
 }

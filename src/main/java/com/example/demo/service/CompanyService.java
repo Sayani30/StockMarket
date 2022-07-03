@@ -1,7 +1,5 @@
 package com.example.demo.service;
 
-import java.util.ArrayList;
-import java.util.Comparator;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +7,6 @@ import org.springframework.stereotype.Service;
 
 import com.example.demo.Repository.CompanyRepository;
 import com.example.demo.bean.CompanyRegistration;
-import com.example.demo.bean.StockDetails;
 
 @Service
 public class CompanyService {
@@ -24,17 +21,23 @@ public class CompanyService {
 	public List<CompanyRegistration> getAllCompanies() {
 		
 		//CompanyRegistration companyRegistration = new CompanyRegistration();
+		//companyRegistration.setMaxStockPrice(maxStockPrice);
 		//companyRegistration.setMaxStockPrice(maxStockPrice());
 		//companyRegistration.setMinStockPrice(minStockPrice);
 		//companyRegistration.setAvgStockPrice(avgStockPrice);
 		return companyRepository.findAll();
 	}
 	
-	public StockDetails maxStockPrice() {
-		List<StockDetails> stockDetailsList = new ArrayList<>();
-		return stockDetailsList.stream().max(Comparator.comparing(StockDetails::getPrice)).get();
-		//return value;
-	}
+//	public CompanyRegistration maxStockPrice() {
+//		List<StockDetails> stockDetailsList = new ArrayList<>();
+//		for(int i=0; i<stockDetailsList.size(); i++) {
+//			StockDetails stocks = new StockDetails();
+//			stockDetailsList.add(stocks);
+//		}
+//		StockDetails value= stockDetailsList.stream().max(Comparator.comparing(StockDetails::getPrice)).get();
+//		return value;
+//
+//	}
 
 	public CompanyRegistration getCompanyById(int id) {
 		return companyRepository.findById(id).orElse(null);
