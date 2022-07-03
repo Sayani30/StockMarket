@@ -1,0 +1,89 @@
+[
+{
+    "companyCode": 1,
+    "comapanyName": "CTS",
+    "companyCEO": "Hari",
+    "companyTurnover": "2087634648",
+    "companyWebsite": "www.cts.com",
+    "stockExchange": "NSE",
+    "startDate": "2021-03-16",
+	"max": 709.85,
+	"min": 37.86,
+	"avg": 361.60,
+    "stockDetailsList": [
+        {
+            "price": 37.86
+        },
+        {
+            "price": 500.85
+        },
+		{
+            "price": 197.86
+        },
+        {
+            "price": 709.85
+        }
+    ]
+},
+{
+    "companyCode": 2,
+    "comapanyName": "ABC",
+    "companyCEO": "Tom",
+    "companyTurnover": "20876348",
+    "companyWebsite": "www.abc.com",
+    "stockExchange": "BSE",
+    "startDate": "2019-08-04",
+	"max": 787.74,
+	"min": 37.86,
+	"avg": 380.80,"
+    "stockDetailsList": [
+        {
+            "price": 787.74
+        },
+        {
+            "price": 50.67
+        },
+		        {
+            "price": 37.86
+        },
+        {
+            "price": 500.85
+        },
+		{
+            "price": 197.86
+        },
+        {
+            "price": 709.85
+        }
+    ]
+},
+{
+ "companyCode": 3,
+    "comapanyName": "Zypher",
+    "companyCEO": "Leo",
+    "companyTurnover": "907876348",
+    "companyWebsite": "www.zypher.com",
+    "stockExchange": "BSE",
+    "startDate": "2020-11-26",
+	"max": 807.49,
+	"min": 12.67,
+	"avg": 411.33,
+    "stockDetailsList": [
+        {
+            "price": 807.49
+        },
+        {
+            "price": 398.12
+        },
+		{
+			"price":12.67
+		},
+		        {
+            "price": 787.74
+        },
+        {
+            "price": 50.67
+        }
+    ]
+}
+]
