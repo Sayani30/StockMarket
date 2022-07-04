@@ -19,25 +19,9 @@ public class CompanyService {
 	}
 
 	public List<CompanyRegistration> getAllCompanies() {
-		
-		//CompanyRegistration companyRegistration = new CompanyRegistration();
-		//companyRegistration.setMaxStockPrice(maxStockPrice);
-		//companyRegistration.setMaxStockPrice(maxStockPrice());
-		//companyRegistration.setMinStockPrice(minStockPrice);
-		//companyRegistration.setAvgStockPrice(avgStockPrice);
 		return companyRepository.findAll();
 	}
 	
-//	public CompanyRegistration maxStockPrice() {
-//		List<StockDetails> stockDetailsList = new ArrayList<>();
-//		for(int i=0; i<stockDetailsList.size(); i++) {
-//			StockDetails stocks = new StockDetails();
-//			stockDetailsList.add(stocks);
-//		}
-//		StockDetails value= stockDetailsList.stream().max(Comparator.comparing(StockDetails::getPrice)).get();
-//		return value;
-//
-//	}
 
 	public CompanyRegistration getCompanyById(int id) {
 		return companyRepository.findById(id).orElse(null);

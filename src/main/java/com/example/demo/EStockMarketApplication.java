@@ -7,8 +7,8 @@ import io.swagger.v3.oas.annotations.OpenAPIDefinition;
 import io.swagger.v3.oas.annotations.info.Info;
 
 @SpringBootApplication
-//@EnableEurekaClient
-//@EnableDiscoveryClient
+@EnableEurekaClient
+@EnableDiscoveryClient
 @OpenAPIDefinition(info=@Info(title = "E-Stock Market API documentation", description = "API documentation"))
 public class EStockMarketApplication {
 
